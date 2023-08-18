@@ -1,0 +1,18 @@
+include "KNeighbors.kgl"
+
+// X : [Cigarettes, Weight]
+// y : [0:Bad , 1:Good]
+data = ``{
+    "x": [[7,70],[7,40],[3,40],[1,40],[3,70]],
+    "y": [0,0,1,1,0],
+    "k":2
+}``
+data = JSON.parse(data)
+new_x = list(7,50)
+
+pred = KNeighbors.KNN(data.k ,data.x , data.y, new_x)
+if pred {
+    write 'Good'
+}else {
+    write 'Bad'
+}
