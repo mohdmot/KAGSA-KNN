@@ -1,0 +1,39 @@
+func KNN (k, X, y, nx) {
+    dis = dict()
+    j=0
+    for x_ -> X {
+        i = -1
+        c = 0
+        for x -> x_ {
+            i+=1
+            try {
+                if c==0 {
+                    c = (x - nx.get(i))**2
+                }else {
+                  c += (x - nx.get(i))**2
+                }
+            }catch {
+                break
+            }
+        }
+        dis.add(y.get(j) , c**0.5)
+        j+=1
+    }
+    neighbors = dis.values().sorted().get(0,k)
+    neighbors_names = list()
+    for i -> dis.keys() {
+        j = dis.get(i)
+        if j -> neighbors {
+            neighbors_names.append(i)
+        }
+    }
+    pred = 0
+    for i -> dis.keys() {
+        j = dis.get(i)
+        if j == neighbors.get(0) {
+            pred = i
+            break
+        }
+    }
+    return pred
+}
