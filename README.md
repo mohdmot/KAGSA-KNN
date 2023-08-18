@@ -7,6 +7,15 @@
 
 ## Test
 i use this small dataset that have `[Cigarettes, Weight]` in `X` and `[0:Bad , 1:Good]` in `y`.
+| i. | Cigarettes | Weight |   |
+| -  |:----------:|:------:|:-:|
+| 0  |      7     |   70   | 0 |
+| 1  |      7     |   40   | 0 |
+| 2  |      3     |   40   | 1 |
+| 3  |      1     |   40   | 1 |
+| 4  |      3     |   70   | 0 |
+
+`cigarettes.kg` :
 ```js
 include "KNeighbors.kgl"
 
